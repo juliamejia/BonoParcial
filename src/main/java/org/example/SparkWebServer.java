@@ -11,9 +11,8 @@ public class SparkWebServer {
 
     public static void main(String... args) {
         port(getPort());
-        get("/", (req,res) -> index());
+        get("/", (req,res) -> getIndexResponse());
 
-// Ruta para calcular el seno de un número
         get("/sin/:number", (req, res) -> {
             double number = Double.parseDouble(req.params(":number"));
             double result = Math.sin(number);
@@ -21,7 +20,6 @@ public class SparkWebServer {
         });
 
 
-// Ruta para calcular el coseno de un número
         get("/cos/:number", (req, res) -> {
             double number = Double.parseDouble(req.params(":number"));
             double result = Math.cos(number);
@@ -29,15 +27,12 @@ public class SparkWebServer {
         });
 
 
-// Ruta para determinar si una cadena es un palíndromo
         get("/isPalindrome/:text", (req, res) -> {
             String text = req.params(":text");
             boolean isPalindrome = checkPalindrome(text);
             return new Gson().toJson(isPalindrome);
         });
 
-
-// Ruta para calcular la magnitud de un vector de dos dimensiones
         get("/magnitude/:x/:y", (req, res) -> {
             double x = Double.parseDouble(req.params(":x"));
             double y = Double.parseDouble(req.params(":y"));
@@ -54,7 +49,7 @@ public class SparkWebServer {
         return 4567;
     }
 
-    private static String index() {
+    private static String getIndexResponse() {
         return "<!DOCTYPE html>\n" +
                 "<html>\n" +
                 "<head>\n" +
