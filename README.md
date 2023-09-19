@@ -6,7 +6,7 @@ Julia Marcela Mejia Perez
     `git clone https://github.com/juliamejia/BonoParcial.git`  
 
 2. Dentro de la carpeta llamada BonoParcial abrimos el cmd y ejecutamos el siguiente comando  
-   `mvn clean package exec:java -D "exec.mainClass"="org.example.SparkWebServer`  
+   `mvn clean package exec:java -D "exec.mainClass"="org.example.SparkWebServer"`  
 
 3. Desde cualquier browser ejecutamos  
    * http://localhost:4567/magnitude/3/4  
